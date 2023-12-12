@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "346446872190",
+    "project_id": "mysalahprojectnoerrors",
+    "storage_bucket": "mysalahprojectnoerrors.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346446872190:android:819ab414de079aff70a22f",
+        "android_client_info": {
+          "package_name": "com.salahprojectnoerrors"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346446872190-pmff8f72nq7edsg3nb26spjcbpa67abh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.salahprojectnoerrors",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "346446872190-4lq5m9ol0vc04go7vijee9o8u3dbfp28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA83q46mXZflHsdSCga6C51io_Lu_0yJOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346446872190-4lq5m9ol0vc04go7vijee9o8u3dbfp28.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
