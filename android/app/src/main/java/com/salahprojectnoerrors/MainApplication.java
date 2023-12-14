@@ -12,7 +12,9 @@ import java.util.List;
 import com.facebook.FacebookSdk;
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 import com.facebook.appevents.AppEventsLogger;
-
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
+import com.facebook.react.ReactRootView; // Import this line
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -46,6 +48,16 @@ public class MainApplication extends Application implements ReactApplication {
         protected Boolean isHermesEnabled() {
           return BuildConfig.IS_HERMES_ENABLED;
         }
+
+        // @Override
+        // protected String getMainComponentName() { // Added method
+        //   return "SalahProjectNoErrors";
+        // }
+
+        // @Override
+        // protected ReactRootView createRootView() { // Added method
+        //   return new RNGestureHandlerEnabledRootView(MainApplication.this);
+        // }
       };
 
   @Override
@@ -63,8 +75,6 @@ public class MainApplication extends Application implements ReactApplication {
     FacebookSdk.fullyInitialize();
     AppEventsLogger.activateApp(this);
     
-
-
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
       // If you opted-in for the New Architecture, we load the native entry point for this app.
       DefaultNewArchitectureEntryPoint.load();

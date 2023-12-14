@@ -9,7 +9,7 @@ GoogleSignin.configure({
   offlineAccess: false,
 });
 
-async function onGoogleButtonPress() {
+async function onGoogleButtonPress(navigation) {
   // Check if your device supports Google Play
   await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
   // Get the users ID token
@@ -17,7 +17,13 @@ async function onGoogleButtonPress() {
 
   // Create a Google credential with the token
   const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+  console.log({idToken});
 
+  // Navigate to the "Home" screen
+  navigation.reset({
+    index: 0,
+    routes: [{name: 'Home'}],
+  });
   // Sign-in the user with the credential
   return auth().signInWithCredential(googleCredential);
 }

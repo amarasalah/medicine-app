@@ -27,16 +27,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 5,
+    borderRadius: 12,
   },
   button: {
-    width: 250,
-    height: 45,
+    width: 320,
+    height: 60,
   },
   text: {
     color: 'white',
-    fontSize: 20,
-    fontFamily: 'Redressed-Regular',
-    fontStyle: 'italic',
+    fontSize: 19,
+    fontFamily: 'Rubik-Medium',
   },
 });

@@ -36,6 +36,7 @@ const App = () => {
             <Stack.Screen name="Onboarding03" component={OnBoarding03} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="SignUp" component={SignUpScreen} />
+            <Stack.Screen name="Home" component={Home} />
           </Stack.Navigator>
         ) : (
           <SplashScreen />

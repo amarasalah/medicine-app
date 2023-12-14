@@ -9,6 +9,7 @@ import {
   Pressable,
   Button,
 } from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
 import React, {useState} from 'react';
 import MyButton from '../../components/MyButton';
 import MyTextInput from '../../components/MyTextInput';
@@ -18,8 +19,16 @@ import signInWithEmailAndPassword from '../../config/firebase/EmailAndPassword';
 import onFacebookButtonPress from '../../config/firebase/FacebookSignIn';
 
 const Login = ({navigation}) => {
+  const [isSelected, setSelection] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // // State variable to track password visibility
+  // const [showPassword, setShowPassword] = useState(false);
+
+  // // Function to toggle the password visibility state
+  // const toggleShowPassword = () => {
+  //   setShowPassword(!showPassword);
+  // };
 
   const handlePress = () => {
     onGoogleButtonPress();
@@ -33,43 +42,62 @@ const Login = ({navigation}) => {
       <ImageBackground
         source={require('../../assets/images/bg_(1).png')}
         style={styles.imageBackground}>
-        <Text style={styles.title}>Bon Retour</Text>
+        <Text style={styles.title}>
+          Rejoignez-nous pour commencer la recherche
+        </Text>
 
         <View style={styles.inputContainer}>
           <SocialMedia
             onPressG={handlePress}
             onPressF={onFacebookButtonPress}
           />
+          <View style={styles.MyTextInput}>
+            <MyTextInput
+              value={email}
+              onChangeText={text => setEmail(text)}
+              placeholder="Votre Nom et Prenom"
+            />
+          </View>
 
-          <MyTextInput
-            value={email}
-            onChangeText={text => setEmail(text)}
-            placeholder="Enter E-mail or Username"
-          />
-          <MyTextInput
-            value={password}
-            onChangeText={text => setPassword(text)}
-            placeholder="Password"
-            secureTextEntry
-          />
+          <View style={styles.MyTextInput}>
+            <MyTextInput
+              value={password}
+              onChangeText={text => setPassword(text)}
+              placeholder="Votre Email"
+              secureTextEntry
+            />
+          </View>
 
-          <MyTextInput
-            value={email}
-            onChangeText={text => setEmail(text)}
-            placeholder="Confirm Password"
-          />
-
-          <MyButton title={"S'inscrire"} onPress={handleEmailAndPassword} />
+          <View style={styles.MyTextInput}>
+            <MyTextInput
+              value={email}
+              onChangeText={text => setEmail(text)}
+              placeholder="Votre Mot de Passe"
+            />
+          </View>
+          <View style={styles.checkboxContainer}>
+            <CheckBox
+              value={isSelected}
+              onValueChange={setSelection}
+              style={styles.checkbox}
+            />
+            <Text style={styles.label}>
+              J'accepte les conditions d'utilisation et la politique de
+              confidentialité
+            </Text>
+          </View>
+          <View style={styles.buttonContainerInscrit}>
+            <MyButton title={"S'inscrire"} onPress={handleEmailAndPassword} />
+          </View>
           <View style={styles.forgetpswdtxtContainer}>
-            <Pressable onPress={() => navigation.navigate('SignUp')}>
-              <Text style={styles.textQuest}>Forget Password?</Text>
-            </Pressable>
+            <Pressable
+              onPress={() => navigation.navigate('SignUp')}></Pressable>
           </View>
         </View>
         <View style={styles.signuptxtContainer}>
           <Text style={styles.textQuest}>Avez vous un compte? </Text>
-          <Pressable onPress={() => navigation.navigate('SignUp')}>
-            <Text>Se connecter</Text>
+          <Pressable onPress={() => navigation.navigate('Login')}>
+            <Text style={styles.textQuest}>Se connecter</Text>
           </Pressable>
         </View>
       </ImageBackground>
@@ -105,7 +133,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     paddingTop: 200,
-    height: 400,
+    height: 300,
     width: '100%',
 
     borderRadius: 20,
@@ -116,11 +144,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   textQuest: {
-    alignSelf: 'flex-end',
-    marginRight: 10,
+    alignSelf: 'flex-start',
+    marginLeft: 20,
     marginBottom: 10,
 
-    color: 'black',
+    color: '#1846A3',
     fontFamily: 'Rubik-Regular',
   },
   textSocial: {
@@ -131,7 +159,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   signuptxtContainer: {
-    marginTop: 10,
+    top: '91%',
     flexDirection: 'row',
     position: 'absolute',
     bottom: 0,
@@ -139,5 +167,29 @@ const styles = StyleSheet.create({
   forgetpswdtxtContainer: {
     flexDirection: 'row',
     marginBottom: 25,
+  },
+  MyTextInput: {
+    width: '100%',
+    margin: -10,
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  checkbox: {
+    marginTop: 4,
+    marginLeft: 10,
+    alignSelf: 'flex-start',
+    borderRadius: '50%',
+  },
+  label: {
+    marginTop: 10,
+    fontSize: 14,
+  },
+  buttonContainerInscrit: {
+    padding: 0,
+    marginTop: 100,
+    marginBottom: -70,
+    height: 40,
   },
 });
