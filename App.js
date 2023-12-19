@@ -12,6 +12,8 @@ import OnBoarding03 from './src/screens/Onboarding/Onboarding03';
 import Home from './src/screens/Home';
 import Login from './src/screens/Auth/Login';
 import SignUpScreen from './src/screens/Auth/SignUp';
+import HomeScreen from './src/screens/Home';
+import BankDuSangCard from './src/components/BankDuSangCard';
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = React.useState(false);
@@ -36,11 +38,14 @@ const App = () => {
             <Stack.Screen name="Onboarding03" component={OnBoarding03} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="SignUp" component={SignUpScreen} />
-            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Home" component={HomeScreen} />
           </Stack.Navigator>
         ) : (
           <SplashScreen />
         )}
+        {/* <Stack.Navigator>
+          <Stack.Screen name="BankDuSangCard" component={BankDuSangCard} />
+        </Stack.Navigator> */}
       </NavigationContainer>
     </>
   );
