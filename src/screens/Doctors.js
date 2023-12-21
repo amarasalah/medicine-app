@@ -17,7 +17,7 @@ import donnéesDocteurs from '../data/doctors-data';
 import PharmacieCard from '../components/PharmacieCard';
 import PHARMACIESDATA from '../data/pharmacyData';
 
-function HomeScreen({navigation}) {
+function Doctors({navigation}) {
   function doctorsPageHandler() {
     navigation.navigate('Doctors');
   }
@@ -768,4 +768,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default Doctors;

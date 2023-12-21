@@ -18,7 +18,7 @@ import onGoogleButtonPress from '../../config/firebase/GoogleSignIn';
 import signInWithEmailAndPassword from '../../config/firebase/EmailAndPassword';
 import onFacebookButtonPress from '../../config/firebase/FacebookSignIn';
 
-const Login = ({navigation}) => {
+const SignUp = ({navigation}) => {
   const [isSelected, setSelection] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -105,7 +105,7 @@ const Login = ({navigation}) => {
   );
 };
 
-export default Login;
+export default SignUp;
 
 const styles = StyleSheet.create({
   container: {

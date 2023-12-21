@@ -1,20 +1,19 @@
-// navigation/MainNavigator.js
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import SignUp from '../screens/Auth/SignUp.js';
-import Login from '../screens/Auth/Login.js';
-import Home from '../screens/Home';
+import HomeScreen from '../screens/Home';
+import Doctors from '../screens/Doctors';
+import Pharmacies from '../screens/Pharmacies';
+import BloodBank from '../screens/BloodBank';
 
 const Stack = createStackNavigator();
 
-export default function MainNavigator() {
-  return (
-    <Stack.Navigator
-      screenOptions={{headerShown: false}}
-      initialRouteName="SignUp">
-      <Stack.Screen name="SignUp" component={SignUp} />
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Home" component={Home} />
-    </Stack.Navigator>
-  );
-}
+const MainStack = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="MainHome" component={HomeScreen} />
+    <Stack.Screen name="Doctors" component={Doctors} />
+    <Stack.Screen name="Pharmacies" component={Pharmacies} />
+    <Stack.Screen name="BloodBank" component={BloodBank} />
+  </Stack.Navigator>
+);
+
+export default MainStack;
