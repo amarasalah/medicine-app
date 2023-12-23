@@ -53,7 +53,7 @@ function Pharmacies({navigation}) {
           angle={101.01}>
           <View style={styles.salutZiedColumnRow}>
             <View style={styles.salutZiedColumn}>
-              <Text style={styles.salutZied}>Salut Zied</Text>
+              <Text style={styles.salutZied}>Salut Pharmacie</Text>
               <Text style={styles.text5}>
                 Trouvez vos Besoins
                 {'\n'}Medicale
