@@ -8,7 +8,7 @@ import BloodBank from '../screens/BloodBank';
 const Stack = createStackNavigator();
 
 const MainStack = () => (
-  <Stack.Navigator>
+  <Stack.Navigator screenOptions={{headerShown: false}}>
     <Stack.Screen name="MainHome" component={HomeScreen} />
     <Stack.Screen name="Doctors" component={Doctors} />
     <Stack.Screen name="Pharmacies" component={Pharmacies} />
